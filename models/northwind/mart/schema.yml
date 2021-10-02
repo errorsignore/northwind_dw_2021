@@ -1,0 +1,11 @@
+version: 2
+
+models:
+    -   name: fact_orders
+        description: "Nossa tablea de dados"
+        columns:
+            -   name: order_id
+                description: "A chave primária original da tablea"
+                tests:
+                    - unique
+                    - not_null

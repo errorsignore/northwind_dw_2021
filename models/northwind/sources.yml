@@ -4,3 +4,9 @@ sources:
   - name: erpnorthwind
     tables:
       - name: public_orders
+      - name: public_customers
+        columns:
+          - name: customer_id
+            tests:
+                - unique
+                - not_null
