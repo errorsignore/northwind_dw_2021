@@ -3,4 +3,4 @@ version: 2
 sources:
   - name: erpnorthwind
     tables:
-      - name: orders
+      - name: public_orders
