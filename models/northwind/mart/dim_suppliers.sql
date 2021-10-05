@@ -10,7 +10,7 @@ with supplier as (
         select
 
 
-            row_number() over (order by s.supplier_id) as supplier_sk, -- auto-incremental surrogate key
+            row_number() over (order by sp.supplier_id) as supplier_sk, -- auto-incremental surrogate key
             sp.supplier_id,
             sp.company_name,
             sp.contact_name,
