@@ -27,23 +27,22 @@ with customers as(
 )
 
 , orders_with_sk as(
-    select o.order_id,
+    select o.order_id as id_do_pedido,
+    o.order_date as data_do_pedido,
+    o.shipped_date as data_de_envio,
+    o.required_date as prazo_de_envio,
     c.customer_sk,
     c.customer_id,
     e.employee_sk,
     p.product_sk,
     sh.shipper_sk,
     sp.supplier_sk,
-    o.ship_region,
-    o.shipped_date,
-    o.ship_country,
-    o.ship_name, 
+    o.ship_country as pais,
     o.ship_city as cidade,
     o.freight as frete,
-    o.required_date,
-    od.unit_price,
-    od.quantity,
-    od.discount
+    od.unit_price as preco_unitario,
+    od.quantity as quantidade,
+    od.discount as disconto
 
 
     from {{ref('stg_orders')}} o
