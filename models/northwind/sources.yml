@@ -10,3 +10,9 @@ sources:
             tests:
                 - unique
                 - not_null
+      - name: categories
+      - name: employees
+      - name: order_details
+      - name: products
+      - name: shippers
+      - name: suppliers
