@@ -4,9 +4,49 @@ sources:
   - name: erpnorthwind
     tables:
       - name: public_orders
+        columns:
+          - name: order_id
+            tests:
+                - unique
+                - not_null
       - name: public_customers
         columns:
           - name: customer_id
+            tests:
+                - unique
+                - not_null
+      - name: categories
+        columns:
+          - name: category_id
+            tests:
+                - unique
+                - not_null
+      - name: employees
+        columns:
+          - name: employee_id
+            tests:
+                - unique
+                - not_null
+      - name: order_details
+        columns:
+          - name: order_id
+            tests:
+                - not_null
+      - name: products
+        columns:
+          - name: product_id
+            tests:
+                - unique
+                - not_null
+      - name: shippers
+        columns:
+          - name: shipper_id
+            tests:
+                - unique
+                - not_null
+      - name: suppliers
+        columns:
+          - name: supplier_id
             tests:
                 - unique
                 - not_null

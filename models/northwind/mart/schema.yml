@@ -2,10 +2,50 @@ version: 2
 
 models:
     -   name: fact_orders
-        description: "Nossa tablea de dados"
+        description: "Nossa tabela de dados"
         columns:
             -   name: order_id
-                description: "A chave primária original da tablea"
+                description: "A chave primária original da tabela"
+                tests:
+                    - unique
+                    - not_null
+    -   name: dim_suppliers
+        description: "Nossos fornecedores"
+        columns:
+            -   name: supplier_id
+                description: "A chave primária original da tabela"
+                tests:
+                    - unique
+                    - not_null
+    -   name: dim_customers
+        description: "Nossos clientes"
+        columns:
+            -   name: customer_id
+                description: "A chave primária original da tabela"
+                tests:
+                    - unique
+                    - not_null
+    -   name: dim_shippers
+        description: "Nossos transportadores"
+        columns:
+            -   name: shipper_id
+                description: "A chave primária original da tabela"
+                tests:
+                    - unique
+                    - not_null
+    -   name: dim_products
+        description: "Nossos produtos"
+        columns:
+            -   name: product_id
+                description: "A chave primária original da tabela"
+                tests:
+                    - unique
+                    - not_null
+    -   name: dim_employees
+        description: "Nossos funcionários"
+        columns:
+            -   name: employee_id
+                description: "A chave primária original da tabela"
                 tests:
                     - unique
                     - not_null
