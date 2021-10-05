@@ -1,28 +1,29 @@
 {{ config(materialized='table') }}
 
-with staging as (
+with supplier as (
     select *
     from {{ref('stg_suppliers')}}
+
 )
 
     , transformed as(
         select
 
 
-            row_number() over (order by supplier_id) as supplier_sk, -- auto-incremental surrogate key
-            supplier_id,
-            company_name,
-            contact_name,
-            contact_title,
-            address,
-            city,
-            region,
-            postal_code,
-            country,
-            phone,
-            fax,
-            homepage
-        from staging
+            row_number() over (order by s.supplier_id) as supplier_sk, -- auto-incremental surrogate key
+            sp.supplier_id,
+            sp.company_name,
+            sp.contact_name,
+            sp.contact_title,
+            sp.address,
+            sp.city,
+            sp.region,
+            sp.postal_code,
+            sp.country,
+            sp.phone,
+            sp.fax,
+            sp.homepage
+        from supplier sp
 
     ) 
 
